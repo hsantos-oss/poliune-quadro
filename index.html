@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O quadro na nossa parede · Dejana Nežić</title>
+<meta name="description" content="Torres Vedras pintada com os pés por Dejana Nežić. O quadro do nosso escritório e a razão de estar lá.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --papel: #f7f1e6; --tinta: #1c1a17; --suave: #5d564b; --linha: #d9cfbd;
+    --telha: #c8452c; --verde: #2f6b3f; --azul: #1f4e8c; --sol: #e9a820;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --sai: cubic-bezier(.16, 1, .3, 1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scrollbar-color: var(--telha) var(--papel); }
+  ::selection { background: var(--sol); color: var(--tinta); }
+  body { margin: 0; background: var(--papel); color: var(--tinta); font: 18px/1.65 var(--sans); }
+  .caixa { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  h1, h2 { font-family: var(--serif); font-weight: 700; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: -.02em; }
+  p { margin: 0 0 1em; max-width: 62ch; }
+  a { color: var(--azul); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 3px solid var(--sol); outline-offset: 3px; border-radius: 2px; }
+
+  /* Hero: a tela dela ocupa o ecrã; sem ficheiro de vídeo fica só a tinta e as quatro cores */
+  .hero { position: relative; min-height: min(100svh, 920px); display: grid; align-items: end; background: var(--tinta); color: var(--papel); overflow: hidden; isolation: isolate; }
+  .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: 0; transition: opacity 1.2s var(--sai); }
+  .hero.com-video video { opacity: 1; }
+  .hero.com-video::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(20 18 15 / .96) 0%, rgb(20 18 15 / .84) 38%, rgb(20 18 15 / .5) 62%, rgb(20 18 15 / .08) 88%); }
+  .hero .caixa { width: 100%; padding-top: 96px; padding-bottom: 56px; }
+  h1 { font-size: clamp(2.9rem, 10.5vw, 6rem); max-width: 11em; }
+  h1 em { font-style: italic; font-weight: 500; color: var(--sol); }
+  .entrada { font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.45; margin: 28px 0 0; max-width: 33em; color: #efe6d6; }
+  .credito { margin: 28px 0 0; font-size: .85rem; color: #cfc5b3; display: none; }
+  .hero.com-video .credito { display: block; }
+  .credito a { color: inherit; }
+  .faixa { height: 14px; background: linear-gradient(90deg, var(--telha) 0 25%, var(--sol) 0 50%, var(--verde) 0 75%, var(--azul) 0); }
+
+  section { padding: clamp(64px, 10vw, 120px) 0; }
+  h2 { font-size: clamp(2.1rem, 5.6vw, 3.6rem); margin-bottom: 28px; }
+
+  .dois { display: grid; gap: 40px; }
+  .dois > * { min-width: 0; }
+  @media (min-width: 900px) { .dois { grid-template-columns: 1fr 1fr; align-items: start; gap: 72px; } }
+
+  .ficha { padding: 0; margin: 32px 0 0; border-top: 1px solid var(--linha); }
+  .ficha div { display: flex; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--linha); font-size: .95rem; }
+  .ficha dt { flex: 0 0 7.5em; color: var(--suave); }
+  .ficha dd { margin: 0; }
+
+  .artista { background: #efe6d3; }
+  .tempo { list-style: none; padding: 0; margin: 0; }
+  .tempo li { display: grid; grid-template-columns: 5.4em 1fr; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--linha); }
+  .tempo b { font-family: var(--serif); font-size: 1.3rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
+  .tempo li:nth-child(4n+1) b { color: #a8351f; }
+  .tempo li:nth-child(4n+2) b { color: var(--verde); }
+  .tempo li:nth-child(4n+3) b { color: var(--azul); }
+  .tempo li:nth-child(4n+4) b { color: #8a5f00; }
+
+  .frase { margin: 0; padding: clamp(72px, 12vw, 140px) 0; background: #b23a23; color: #fff; }
+  .frase p { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(2rem, 6.4vw, 4.4rem); line-height: 1.08; letter-spacing: -.02em; max-width: 15em; margin: 0; text-wrap: balance; }
+  .frase footer { margin-top: 28px; font-size: .95rem; color: #fff; }
+
+  .videos { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 36px; }
+  .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 540px !important; background: #fff; border: 1px solid var(--linha); border-radius: 4px; padding: 16px; }
+
+  .lembrete { background: var(--tinta); color: var(--papel); }
+  .lembrete h2 { font-size: clamp(2.6rem, 9vw, 6rem); margin-bottom: 0; }
+  .lembrete h2 em { color: var(--sol); font-weight: 500; }
+  .cinco { display: flex; gap: clamp(8px, 2vw, 20px); margin: 48px 0; padding: 0; list-style: none; }
+  .cinco li { flex: 1; max-width: 132px; aspect-ratio: 1; display: grid; place-items: center; font: 700 clamp(1.5rem, 6vw, 3.2rem) var(--serif); border-radius: 50%; color: var(--tinta); }
+  .cinco li:nth-child(1) { background: var(--telha); color: #fff; }
+  .cinco li:nth-child(2) { background: var(--sol); }
+  .cinco li:nth-child(3) { background: #6fae6a; }
+  .cinco li:nth-child(4) { background: #7fb0e6; }
+  .cinco li:nth-child(5) { background: var(--papel); }
+  .lembrete p { font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.5; max-width: 32em; color: #efe6d6; }
+  @media (prefers-reduced-motion: no-preference) {
+    .cinco.conta li { animation: conta .9s var(--sai) backwards; }
+    .cinco.conta li:nth-child(2) { animation-delay: .45s; }
+    .cinco.conta li:nth-child(3) { animation-delay: .9s; }
+    .cinco.conta li:nth-child(4) { animation-delay: 1.35s; }
+    .cinco.conta li:nth-child(5) { animation-delay: 1.8s; }
+    @keyframes conta { from { transform: scale(.35); opacity: .15; filter: blur(6px); } }
+  }
+
+  footer.fim { padding: 40px 20px 56px; font-size: .9rem; color: var(--suave); }
+  footer.fim a { color: inherit; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <!-- Ficheiro do vídeo: video/hero.mp4 (mudo, em ciclo). Sem ficheiro, o hero fica só com o texto. -->
+  <video src="video/hero.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>
+  <div class="caixa">
+    <h1>Antes de dizeres <em>«não consigo»</em>, pensa cinco vezes.</h1>
+    <p class="entrada">O quadro de Torres Vedras que está no nosso escritório foi pintado com os pés. A autora, Dejana Nežić, nasceu sem braços. Esta página conta quem ela é e porque quisemos este quadro à vista de todos.</p>
+    <p class="credito">Vídeo: Dejana Nežić, <a href="https://www.instagram.com/girl_with_wings_art/">@girl_with_wings_art</a></p>
+  </div>
+</header>
+<div class="faixa" aria-hidden="true"></div>
+
+<main>
+<section>
+  <div class="caixa dois">
+    <div>
+      <h2>Torres Vedras, telhado a telhado</h2>
+      <p>Encomendámos à Dejana uma vista de Torres Vedras. Ela pinta sobretudo animais, por isso uma cidade inteira foi, nas palavras dela, um verdadeiro desafio, que aceitou com alegria.</p>
+      <p>Trabalhou na tela de forma intensiva durante mais de três semanas. Conta que sabia que o quadro ia ficar num sítio onde muita gente o veria todos os dias, e que por isso deu a cada telhado, a cada árvore e a cada janela a atenção que mereciam.</p>
+      <p>Quando pousou o pincel, diz que sentiu orgulho: do quadro e dela própria.</p>
+      <dl class="ficha">
+        <div><dt>Autora</dt><dd>Dejana Nežić (Girl with Wings)</dd></div>
+        <div><dt>Tema</dt><dd>Torres Vedras, Portugal</dd></div>
+        <div><dt>Técnica</dt><dd>Acrílico sobre tela, pintado com o pé</dd></div>
+        <div><dt>Origem</dt><dd>Estúdio em Petrovaradin, Novi Sad, Sérvia</dd></div>
+      </dl>
+    </div>
+    <div>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DfcYAZbjCk3/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DfcYAZbjCk3/">Ver o quadro terminado no Instagram da artista</a>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="artista">
+  <div class="caixa dois">
+    <div>
+      <h2>Dejana Nežić, a rapariga com asas</h2>
+      <p>Na Sérvia é conhecida por «Devojka sa krilima», a rapariga com asas. Aprendeu a fazer tudo com os pés: vestir-se, comer, escrever, pintar e, mais tarde, conduzir.</p>
+      <p>Estudou pintura, foi campeã do mundo de para-taekwondo, é mãe e vive do que pinta. Diz que não pinta a deficiência nem a tristeza: pinta movimento, luz e cor, com cores fortes de propósito.</p>
+    </div>
+    <ol class="tempo">
+      <li><b>1994</b><span>Nasce em Novi Sad, na Sérvia, sem braços.</span></li>
+      <li><b>6 anos</b><span>Pega pela primeira vez num pincel entre os dedos dos pés.</span></li>
+      <li><b>9 anos</b><span>Entra para a VDMFK, a associação internacional de artistas que pintam com a boca e com o pé.</span></li>
+      <li><b>2014</b><span>Conclui a Escola de Design «Bogdan Šuput», em Novi Sad.</span></li>
+      <li><b>2018</b><span>Campeã da Europa de para-taekwondo, em Plovdiv. Entra na Academia de Pintura Clássica da Universidade EDUKONS, onde se forma pintora.</span></li>
+      <li><b>2019</b><span>Campeã do mundo em Antália. Revalida o título em Istambul, em 2021.</span></li>
+      <li><b>2023</b><span>Nasce a filha, Lara. Deixa a competição.</span></li>
+      <li><b>2024</b><span>Tira a carta de condução. Conduz com os pés.</span></li>
+      <li><b>2025</b><span>Representa a Sérvia na AccessAbilities Expo, no Dubai.</span></li>
+      <li><b>2026</b><span>Abre, com o marido Marko, um Centro Criativo para pessoas com deficiência.</span></li>
+    </ol>
+  </div>
+</section>
+
+<blockquote class="frase">
+  <div class="caixa">
+    <p>«A tua diferença não tem de ser escondida. Pode tornar-se a tua assinatura.»</p>
+    <footer>Dejana Nežić, na biografia do site dela (tradução nossa)</footer>
+  </div>
+</blockquote>
+
+<section>
+  <div class="caixa">
+    <h2>Vê-la a pintar o nosso quadro</h2>
+    <p>Publicações da própria artista. Carrega em cada uma para ver o vídeo.</p>
+    <div class="videos">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/De9B7TlMlGi/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/De9B7TlMlGi/">O quadro a meio, depois de três semanas de trabalho</a>
+      </blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfFS33LDKQY/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DfFS33LDKQY/">Como nasce uma encomenda, da ideia à parede</a>
+      </blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeHDEd7s2Bg/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DeHDEd7s2Bg/">Um dia de trabalho no estúdio</a>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="lembrete">
+  <div class="caixa">
+    <h2>Pensa cinco vezes. <em>Depois tenta.</em></h2>
+    <ol class="cinco" aria-label="Cinco vezes">
+      <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+    </ol>
+    <p>Pendurámos este quadro para nos lembrar disto: antes de dizer ou de pensar que não conseguimos fazer esta ou aquela tarefa, pensar cinco vezes. E encontrar motivação para, pelo menos, tentar.</p>
+  </div>
+</section>
+</main>
+
+<footer class="fim caixa">
+  <p>Factos sobre a artista: <a href="https://www.girlwithwings.com/pages/bio">biografia em girlwithwings.com</a>, <a href="https://www.vdmfk.com/en/artists/backo-dejana/">perfil na VDMFK</a> e as publicações dela no Instagram, <a href="https://www.instagram.com/girl_with_wings_art/">@girl_with_wings_art</a>. Vídeos e imagens pertencem à artista.</p>
+</footer>
+
+<script>
+  const hero = document.querySelector('.hero'), v = hero.querySelector('video');
+  const mostra = () => hero.classList.add('com-video');
+  // o canplay pode já ter disparado antes deste script correr (vídeo em cache)
+  v.readyState >= 3 ? mostra() : v.addEventListener('canplay', mostra);
+  v.addEventListener('error', () => v.remove());
+  const cinco = document.querySelector('.cinco');
+  new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { cinco.classList.add('conta'); o.disconnect(); } }, { threshold: .6 }).observe(cinco);
+</script>
+<script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
