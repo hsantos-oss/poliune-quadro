@@ -2,3 +2,4 @@ fotos/
 *.mov
 .DS_Store
 .impeccable/
+.hostinger-deploy.pub
