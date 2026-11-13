@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The painting on our wall · Dejana Nežić</title>
+<link rel="alternate" hreflang="pt" href="https://poliune.pt/quadro/">
+<link rel="alternate" hreflang="en" href="https://poliune.pt/quadro/en/">
+<meta name="description" content="Torres Vedras painted by foot by Dejana Nežić. The painting in our office and why it hangs there.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --papel: #f7f1e6; --tinta: #1c1a17; --suave: #5d564b; --linha: #d9cfbd;
+    --telha: #c8452c; --verde: #2f6b3f; --azul: #1f4e8c; --sol: #e9a820;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --sai: cubic-bezier(.16, 1, .3, 1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scrollbar-color: var(--telha) var(--papel); }
+  ::selection { background: var(--sol); color: var(--tinta); }
+  body { margin: 0; background: var(--papel); color: var(--tinta); font: 18px/1.65 var(--sans); }
+  .caixa { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  h1, h2 { font-family: var(--serif); font-weight: 700; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: -.02em; }
+  p { margin: 0 0 1em; max-width: 62ch; }
+  a { color: var(--azul); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 3px solid var(--sol); outline-offset: 3px; border-radius: 2px; }
+
+  /* Hero: a tela dela ocupa o ecrã; sem ficheiro de vídeo fica só a tinta e as quatro cores */
+  .hero { position: relative; min-height: min(100svh, 920px); display: grid; align-items: end; background: var(--tinta); color: var(--papel); overflow: hidden; isolation: isolate; }
+  .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: 0; transition: opacity 1.2s var(--sai); }
+  .hero.com-video video { opacity: 1; }
+  .hero.com-video::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(20 18 15 / .96) 0%, rgb(20 18 15 / .84) 38%, rgb(20 18 15 / .5) 62%, rgb(20 18 15 / .08) 88%); }
+  .hero .caixa { width: 100%; padding-top: 96px; padding-bottom: 56px; }
+  h1 { font-size: clamp(2.9rem, 10.5vw, 6rem); max-width: 11em; }
+  h1 em { font-style: italic; font-weight: 500; color: var(--sol); }
+  .entrada { font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.45; margin: 28px 0 0; max-width: 33em; color: #efe6d6; }
+  .credito { margin: 28px 0 0; font-size: .85rem; color: #cfc5b3; display: none; }
+  .hero.com-video .credito { display: block; }
+  .credito a { color: inherit; }
+  .faixa { height: 14px; background: linear-gradient(90deg, var(--telha) 0 25%, var(--sol) 0 50%, var(--verde) 0 75%, var(--azul) 0); }
+
+  section { padding: clamp(64px, 10vw, 120px) 0; }
+  h2 { font-size: clamp(2.1rem, 5.6vw, 3.6rem); margin-bottom: 28px; }
+
+  .dois { display: grid; gap: 40px; }
+  .dois > * { min-width: 0; }
+  @media (min-width: 900px) { .dois { grid-template-columns: 1fr 1fr; align-items: start; gap: 72px; } }
+
+  .ficha { padding: 0; margin: 32px 0 0; border-top: 1px solid var(--linha); }
+  .ficha div { display: flex; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--linha); font-size: .95rem; }
+  .ficha dt { flex: 0 0 7.5em; color: var(--suave); }
+  .ficha dd { margin: 0; }
+
+  .artista { background: #efe6d3; }
+  .tempo { list-style: none; padding: 0; margin: 0; }
+  .tempo li { display: grid; grid-template-columns: 5.4em 1fr; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--linha); }
+  .tempo b { font-family: var(--serif); font-size: 1.3rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
+  .tempo li:nth-child(4n+1) b { color: #a8351f; }
+  .tempo li:nth-child(4n+2) b { color: var(--verde); }
+  .tempo li:nth-child(4n+3) b { color: var(--azul); }
+  .tempo li:nth-child(4n+4) b { color: #8a5f00; }
+
+  .frase { margin: 0; padding: clamp(72px, 12vw, 140px) 0; background: #b23a23; color: #fff; }
+  .frase p { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(2rem, 6.4vw, 4.4rem); line-height: 1.08; letter-spacing: -.02em; max-width: 15em; margin: 0; text-wrap: balance; }
+  .frase footer { margin-top: 28px; font-size: .95rem; color: #fff; }
+
+  .videos { position: relative; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 36px; }
+  .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 540px !important; background: #fff; border: 1px solid var(--linha); border-radius: 4px; padding: 16px; }
+
+  .lembrete { background: var(--tinta); color: var(--papel); }
+  .lembrete h2 { font-size: clamp(2.6rem, 9vw, 6rem); margin-bottom: 0; }
+  .lembrete h2 em { color: var(--sol); font-weight: 500; }
+  .cinco { display: flex; gap: clamp(8px, 2vw, 20px); margin: 48px 0; padding: 0; list-style: none; }
+  .cinco li { flex: 1; max-width: 132px; aspect-ratio: 1; display: grid; place-items: center; font: 700 clamp(1.5rem, 6vw, 3.2rem) var(--serif); border-radius: 50%; color: var(--tinta); }
+  .cinco li:nth-child(1) { background: var(--telha); color: #fff; }
+  .cinco li:nth-child(2) { background: var(--sol); }
+  .cinco li:nth-child(3) { background: #6fae6a; }
+  .cinco li:nth-child(4) { background: #7fb0e6; }
+  .cinco li:nth-child(5) { background: var(--papel); }
+  .lembrete p { font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.5; max-width: 32em; color: #efe6d6; }
+  @media (prefers-reduced-motion: no-preference) {
+    .cinco.conta li { animation: conta .9s var(--sai) backwards; }
+    .cinco.conta li:nth-child(2) { animation-delay: .45s; }
+    .cinco.conta li:nth-child(3) { animation-delay: .9s; }
+    .cinco.conta li:nth-child(4) { animation-delay: 1.35s; }
+    .cinco.conta li:nth-child(5) { animation-delay: 1.8s; }
+    @keyframes conta { from { transform: scale(.35); opacity: .15; filter: blur(6px); } }
+  }
+
+  .destaque { margin: 36px 0 0; padding-top: 28px; border-top: 3px solid var(--telha); }
+  .destaque p:first-child { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.45rem, 3.2vw, 1.9rem); line-height: 1.25; letter-spacing: -.01em; text-wrap: balance; }
+  .destaque p:last-child { margin-bottom: 0; }
+  .lingua { position: absolute; top: 20px; right: 20px; font-size: .9rem; font-weight: 600; color: var(--papel); padding: 8px 14px; border: 1px solid rgb(247 241 230 / .55); border-radius: 999px; text-decoration: none; background: rgb(20 18 15 / .45); }
+  .lingua:hover { background: var(--papel); color: var(--tinta); }
+
+  footer.fim { padding: 40px 20px 56px; font-size: .9rem; color: var(--suave); }
+  footer.fim a { color: inherit; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <!-- Ficheiro do vídeo: video/hero.mp4 (mudo, em ciclo). Sem ficheiro, o hero fica só com o texto. -->
+  <video src="../video/hero.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>
+  <a class="lingua" href="../" lang="pt" hreflang="pt">Português</a>
+  <div class="caixa">
+    <h1>Don’t ask if it can be done. <em>Ask how.</em></h1>
+    <p class="entrada">The painting of Torres Vedras in our office was painted by foot. The artist, Dejana Nežić, was born without arms. This page tells who she is and why we wanted this painting where everyone can see it.</p>
+    <p class="credito">Video: Dejana Nežić, <a href="https://www.instagram.com/girl_with_wings_art/">@girl_with_wings_art</a></p>
+  </div>
+</header>
+<div class="faixa" aria-hidden="true"></div>
+
+<main>
+<section>
+  <div class="caixa dois">
+    <div>
+      <h2>Torres Vedras, roof by roof</h2>
+      <p>We commissioned a view of Torres Vedras, our home town in Portugal, from Dejana. She mostly paints animals, so a whole town was, as she puts it, a real challenge, and one she took on gladly.</p>
+      <p>She worked on the canvas intensively for more than three weeks. She says she knew the painting would hang where many people would see it every day, so she gave every roof, every tree and every window the attention it deserved.</p>
+      <p>When she put the brush down, she says she felt proud: of the painting and of herself.</p>
+      <div class="destaque">
+        <p>Dejana painted a town she does not know. Even so, you can feel the love and the passion in every brushstroke.</p>
+        <p>It was a challenge, and only one more in her life. We deeply value all the ones she must have met along the way, and how she has always found a way past them, with a smile.</p>
+      </div>
+      <dl class="ficha">
+        <div><dt>Artist</dt><dd>Dejana Nežić (Girl with Wings)</dd></div>
+        <div><dt>Subject</dt><dd>Torres Vedras, Portugal</dd></div>
+        <div><dt>Medium</dt><dd>Acrylic on canvas, painted by foot</dd></div>
+        <div><dt>Made in</dt><dd>Studio in Petrovaradin, Novi Sad, Serbia</dd></div>
+      </dl>
+    </div>
+    <div>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DfcYAZbjCk3/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DfcYAZbjCk3/">See the finished painting on the artist’s Instagram</a>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="artista">
+  <div class="caixa dois">
+    <div>
+      <h2>Dejana Nežić, the girl with wings</h2>
+      <p>In Serbia she is known as “Devojka sa krilima”, the girl with wings. She learned to do everything with her feet: dressing, eating, writing, painting and, later, driving.</p>
+      <p>She studied painting, was para-taekwondo world champion, is a mother and makes her living from her art. She says she does not paint disability or sadness: she paints movement, light and colour, in deliberately strong colours.</p>
+    </div>
+    <ol class="tempo">
+      <li><b>1994</b><span>Born in Novi Sad, Serbia, without arms.</span></li>
+      <li><b>Age 6</b><span>Holds a brush between her toes for the first time.</span></li>
+      <li><b>Age 9</b><span>Joins the VDMFK, the international association of mouth and foot painting artists.</span></li>
+      <li><b>2014</b><span>Graduates from the “Bogdan Šuput” School of Design in Novi Sad.</span></li>
+      <li><b>2018</b><span>European para-taekwondo champion in Plovdiv. Enters the Academy of Classical Painting at EDUKONS University, where she graduates as a painter.</span></li>
+      <li><b>2019</b><span>World champion in Antalya. Retains the title in Istanbul in 2021.</span></li>
+      <li><b>2023</b><span>Her daughter Lara is born. She retires from competition.</span></li>
+      <li><b>2024</b><span>Gets her driving licence. She drives with her feet.</span></li>
+      <li><b>2025</b><span>Represents Serbia at the AccessAbilities Expo in Dubai.</span></li>
+      <li><b>2026</b><span>Opens a Creative Centre for people with disabilities, with her husband Marko.</span></li>
+    </ol>
+  </div>
+</section>
+
+<blockquote class="frase">
+  <div class="caixa">
+    <p>“Your difference does not have to be hidden. It can become your signature.”</p>
+    <footer>Dejana Nežić, in the bio on her website</footer>
+  </div>
+</blockquote>
+
+<section>
+  <div class="caixa">
+    <h2>Watch her paint our painting</h2>
+    <p>Posts by the artist herself. Tap each one to watch the video.</p>
+    <div class="videos">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/De9B7TlMlGi/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/De9B7TlMlGi/">The painting halfway through, after three weeks of work</a>
+      </blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfFS33LDKQY/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DfFS33LDKQY/">How a commission is born, from idea to wall</a>
+      </blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeHDEd7s2Bg/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DeHDEd7s2Bg/">A working day in the studio</a>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="lembrete">
+  <div class="caixa">
+    <h2>Where there’s a will, <em>there’s a way.</em></h2>
+    <ol class="cinco" aria-label="Five ways">
+      <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+    </ol>
+    <p>The Portuguese proverb has a second half that counts too: those who don’t want to, find an excuse.</p>
+    <p>We hung this painting to remind ourselves to look at the solution first and the problem second. Before saying “it can’t be done”, look for five ways of doing it. Almost always, one of them works.</p>
+  </div>
+</section>
+</main>
+
+<footer class="fim caixa">
+  <p>Facts about the artist: <a href="https://www.girlwithwings.com/pages/bio">bio at girlwithwings.com</a>, <a href="https://www.vdmfk.com/en/artists/backo-dejana/">VDMFK profile</a> and her Instagram posts, <a href="https://www.instagram.com/girl_with_wings_art/">@girl_with_wings_art</a>. Videos and images belong to the artist.</p>
+</footer>
+
+<script>
+  const hero = document.querySelector('.hero'), v = hero.querySelector('video');
+  const mostra = () => hero.classList.add('com-video');
+  // o canplay pode já ter disparado antes deste script correr (vídeo em cache)
+  v.readyState >= 3 ? mostra() : v.addEventListener('canplay', mostra);
+  v.addEventListener('error', () => v.remove());
+  const cinco = document.querySelector('.cinco');
+  new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { cinco.classList.add('conta'); o.disconnect(); } }, { threshold: .6 }).observe(cinco);
+</script>
+<script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>

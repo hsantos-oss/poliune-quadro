@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>O quadro na nossa parede · Dejana Nežić</title>
+<link rel="alternate" hreflang="pt" href="https://poliune.pt/quadro/">
+<link rel="alternate" hreflang="en" href="https://poliune.pt/quadro/en/">
 <meta name="description" content="Torres Vedras pintada com os pés por Dejana Nežić. O quadro do nosso escritório e a razão de estar lá.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +68,7 @@
   .frase p { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(2rem, 6.4vw, 4.4rem); line-height: 1.08; letter-spacing: -.02em; max-width: 15em; margin: 0; text-wrap: balance; }
   .frase footer { margin-top: 28px; font-size: .95rem; color: #fff; }
 
-  .videos { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 36px; }
+  .videos { position: relative; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 36px; }
   .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; max-width: 540px !important; background: #fff; border: 1px solid var(--linha); border-radius: 4px; padding: 16px; }
 
   .lembrete { background: var(--tinta); color: var(--papel); }
@@ -89,6 +91,12 @@
     @keyframes conta { from { transform: scale(.35); opacity: .15; filter: blur(6px); } }
   }
 
+  .destaque { margin: 36px 0 0; padding-top: 28px; border-top: 3px solid var(--telha); }
+  .destaque p:first-child { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.45rem, 3.2vw, 1.9rem); line-height: 1.25; letter-spacing: -.01em; text-wrap: balance; }
+  .destaque p:last-child { margin-bottom: 0; }
+  .lingua { position: absolute; top: 20px; right: 20px; font-size: .9rem; font-weight: 600; color: var(--papel); padding: 8px 14px; border: 1px solid rgb(247 241 230 / .55); border-radius: 999px; text-decoration: none; background: rgb(20 18 15 / .45); }
+  .lingua:hover { background: var(--papel); color: var(--tinta); }
+
   footer.fim { padding: 40px 20px 56px; font-size: .9rem; color: var(--suave); }
   footer.fim a { color: inherit; }
 </style>
@@ -97,6 +105,7 @@
 <header class="hero">
   <!-- Ficheiro do vídeo: video/hero.mp4 (mudo, em ciclo). Sem ficheiro, o hero fica só com o texto. -->
   <video src="video/hero.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>
+  <a class="lingua" href="en/" lang="en" hreflang="en">English</a>
   <div class="caixa">
     <h1>Não perguntes se dá. <em>Pergunta como.</em></h1>
     <p class="entrada">O quadro de Torres Vedras que está no nosso escritório foi pintado com os pés. A autora, Dejana Nežić, nasceu sem braços. Esta página conta quem ela é e porque quisemos este quadro à vista de todos.</p>
@@ -113,6 +122,10 @@
       <p>Encomendámos à Dejana uma vista de Torres Vedras. Ela pinta sobretudo animais, por isso uma cidade inteira foi, nas palavras dela, um verdadeiro desafio, que aceitou com alegria.</p>
       <p>Trabalhou na tela de forma intensiva durante mais de três semanas. Conta que sabia que o quadro ia ficar num sítio onde muita gente o veria todos os dias, e que por isso deu a cada telhado, a cada árvore e a cada janela a atenção que mereciam.</p>
       <p>Quando pousou o pincel, diz que sentiu orgulho: do quadro e dela própria.</p>
+      <div class="destaque">
+        <p>A Dejana pintou uma cidade que não conhece. Mesmo assim, sente-se o amor e a paixão em cada pincelada.</p>
+        <p>Foi um desafio, e é apenas mais um na vida dela. Damos muito valor a todos os que deve ter encontrado pelo caminho e à forma como sempre arranjou maneira de os ultrapassar, com um sorriso.</p>
+      </div>
       <dl class="ficha">
         <div><dt>Autora</dt><dd>Dejana Nežić (Girl with Wings)</dd></div>
         <div><dt>Tema</dt><dd>Torres Vedras, Portugal</dd></div>
